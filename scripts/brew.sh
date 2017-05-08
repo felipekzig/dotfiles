@@ -56,6 +56,8 @@ brew tap cloudfoundry/tap
 brew install cf-cli
 
 # Brew Cask
+brew tap caskroom/cask
+
 brew cask install google-chrome
 brew cask install google-drive
 brew cask install google-hangouts
