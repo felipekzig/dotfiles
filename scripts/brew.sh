@@ -18,7 +18,6 @@ brew install homebrew/dupes/openssh
 brew install zsh zsh-completions
 brew install tmux
 
-brew install android-sdk 
 brew install autoconf
 brew install automake
 brew install awscli
@@ -57,16 +56,14 @@ brew tap cloudfoundry/tap
 brew install cf-cli
 
 # Brew Cask
-#brew cask install atom
-#brew cask install google-chrome
+brew cask install google-chrome
 brew cask install google-drive
 brew cask install google-hangouts
 brew cask install insomnia
-#brew cask install iterm2
-#brew cask install skype
+brew cask install iterm2
+brew cask install skype
 brew cask install spotify
 brew cask install spotifree
-#brew cask install tunnelblick
 brew cask install visual-studio-code
 
 # Clean up
