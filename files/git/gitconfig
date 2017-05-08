@@ -1,0 +1,25 @@
+[push]
+	default = simple
+
+[core]
+	excludesfile = ~/.gitignore-global
+	editor = vi
+
+[alias]
+    ec = config --global -e
+	undo = reset HEAD˜1 --mixed
+    amend = commit --amend --reuse-message=HEAD
+	wip = !git add -A && git commit -m "WIP"
+	bclean = "!f() { git branch --merged ${1-development} | grep -v "${1-development}$" | xargs git branch -d; }; f"
+    unstage = reset HEAD
+	cdiff = diff --minimal -w
+    d = !"git diff-index --quiet HEAD -- || clear; git --no-pager diff --patch-with-stat"
+    puo = !"git push origin $(git branch-name)"
+    branch-name = "!git rev-parse --abbrev-ref HEAD"
+    parent-branch = !"git config branch.$(git branch-name).parentbranch"
+    reset-parent = !"git reset --hard $(git parent-branch)"
+    open-prp = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/compare/$(git parent-branch)...$(git branch-name)\""
+    open-pr = "!open \"$(git remote -v | grep origin | grep push | cut -f 2 | cut -d \" \" -f 1 | sed -e \"s|git@\\(.*\\):\\(.*\\).git|https://\\1/\\2|\")/pull/new/$(git rev-parse --abbrev-ref HEAD)\""
+    cob = !"git config branch.$1.parentbranch $(git branch-name); git checkout -b"
+[user]
+	email = felipe.zigmundo@wmg.com
