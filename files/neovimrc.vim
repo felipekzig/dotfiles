@@ -51,6 +51,7 @@ let mapleader = ","
 
 " ZFZ
 " This is the default extra key bindings
+let $FZF_DEFAULT_COMMAND = 'ag -g ""'
 map <leader>p :Files <CR>
 map <C-p> :Files <CR>
 
